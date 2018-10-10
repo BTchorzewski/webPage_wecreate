@@ -1,0 +1,27 @@
+{
+  "name": "wecreate",
+  "version": "1.0.0",
+  "description": "web page for portofio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bartosz Tchorzewski",
+  "license": "MIT",
+  "dependencies": {
+    "browsersync": "0.0.1-security",
+    "normalize": "^0.3.1",
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.0",
+    "browserify": "^16.2.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "jshint": "^2.9.6",
+    "typescript": "^3.1.2",
+    "uglify": "^0.1.5"
+  }
+}
