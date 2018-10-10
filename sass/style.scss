@@ -1,11 +1,16 @@
 // box-sizing everything
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
-a:active, a:focus, a:checked, a:any-link {
+a:active,
+a:focus,
+a:checked,
+a:any-link {
     text-decoration: none;
-    color:#000000;
+    color: #000000;
 }
 
 .container {
@@ -13,6 +18,7 @@ a:active, a:focus, a:checked, a:any-link {
     max-width: 1400px;
     margin: 0 auto;
 }
+
 // header section start
 .header {
     height: 448px;
@@ -23,6 +29,7 @@ a:active, a:focus, a:checked, a:any-link {
     position: relative;
 }
 
+// first line in header
 .header::before {
     content: "";
     width: 400px;
@@ -30,11 +37,12 @@ a:active, a:focus, a:checked, a:any-link {
     background-image: url("../wecreate-assets/wecreate-assets/img/wave-top2.svg");
     background-size: contain;
     position: absolute;
-    right:0;
+    right: 0;
     bottom: 50px;
     z-index: 1;
 }
 
+// second line in header
 .header::after {
     content: "";
     width: 477px;
@@ -43,7 +51,7 @@ a:active, a:focus, a:checked, a:any-link {
     background-repeat: no-repeat;
     background-size: auto;
     position: absolute;
-    right:0;
+    right: 0;
     bottom: -33px;
     z-index: 1;
 }
@@ -60,13 +68,13 @@ a:active, a:focus, a:checked, a:any-link {
 // I had to add "a" tag to force links to change color.
 a.navigation__link {
     display: inline-block;
-    margin:0 10px;
+    margin: 0 10px;
     font-size: 24px;
     text-transform: uppercase;
     color: #582782;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-}   
+}
 
 .header__title {
     font-size: 116px;
@@ -88,10 +96,56 @@ a.navigation__link {
 
 // header end
 
-// portfolio start
-.portfolio {}
-.portfolio__description {}
-.description__title {}
-.description__note {}
-.portfolio__image {}
-// portfolio end
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px ;
+
+}
+
+.right {
+    flex-flow: row;
+}
+
+.left {
+    flex-flow: row-reverse;
+}
+
+.subdescription {
+    width: 408px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 0 40px;
+}
+
+.subdescription__title {
+    font-size: 27px;
+    color: #5f1b98;
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+.subdescription__note {
+    font-size: 12px;
+    color: #440c74;
+    font-family: "Roboto";
+}
+
+.subdescription__button {
+    font-size: 15px;
+    color: #440c74;
+    font-family: "Montserrat";
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid #440c74;
+}
+
+.description__image {
+    display: inline-block;
+    width: 409px;
+    height: auto;
+    margin: 0;
+}
