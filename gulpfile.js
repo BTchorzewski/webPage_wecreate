@@ -1,9 +1,12 @@
 'use strict';
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require("gulp-autoprefixer");
-var sourcemaps = require("gulp-sourcemaps");
-var browserSync = require('browser-sync').create();
+
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let autoprefixer = require("gulp-autoprefixer");
+let sourcemaps = require("gulp-sourcemaps");
+let browserSync = require('browser-sync').create();
+let csslint = require("gulp-csslint");
+
 gulp.task('browserSync', function () {
     browserSync.init({
         server: {
@@ -20,13 +23,23 @@ gulp.task('sass', function () {
         browsers: ['> 5%'],
         cascade: false
     }))
+        .pipe(csslint())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.reload({
         stream: true
     }));
 });
-gulp.task('watch', ['browserSync', 'sass'], function () {
+
+gulp.task('html', function() {
+    return gulp.src('./index.html')
+    .pipe(browserSync.reload({
+        stream: true
+    }))
+})
+
+gulp.task('watch', ['browserSync', 'sass', 'html'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
+    gulp.watch('./index.html', ['html']);
 });
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch', 'html' ]);
