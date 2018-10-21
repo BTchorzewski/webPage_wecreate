@@ -38,8 +38,16 @@ gulp.task('html', function() {
     }))
 })
 
-gulp.task('watch', ['browserSync', 'sass', 'html'], function () {
+gulp.task("js", function(){
+    return gulp.src("./scripts/*.js")
+    .pipe(browserSync.reload({
+        stream: true
+    }))
+})
+
+gulp.task('watch', ['browserSync', 'sass', 'html', 'js'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
     gulp.watch('./index.html', ['html']);
+    gulp.watch('./scripts/*.js', ['js']);
 });
 gulp.task('default', ['sass', 'watch', 'html' ]);

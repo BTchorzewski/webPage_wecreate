@@ -17,6 +17,7 @@ a:any-link {
     min-width: 360px;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
 }
 
 // header section start
@@ -31,7 +32,9 @@ a:any-link {
     padding-top: 100px; 
 }
 
-
+.menu-clicker {
+    display: none;
+}
 
 // first line in header
 .header::before {
@@ -308,7 +311,7 @@ a.navigation__link {
     .header {
         height: 400px;
         position: relative;
-        margin-top: -140px;
+        margin-top: -650px;
     }
 
     .header__title {
@@ -326,28 +329,41 @@ a.navigation__link {
     }
 
     .navigation {
-        // display: none;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         position: relative;
+        left: -1500px;    
         z-index: 3;
         height: 100vh;
+
         
     }
-
-    .container::before {
-        content: "sdas";
+    .menu-clicker {
+        margin: 0;
         display: block;
+        line-height: 50px;
         width: 50px;
         height: 50px;
         background-color: #fe6a82;
-        position: relative;
-        z-index: 2;
-        
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+    }
+    
+
+    .animation-showUp {
+        animation-name: showUp;
+        animation-duration: 200ms;
+        left: 150px;
     }
 
-
+    .animation-showDown {
+        animation-name: showDown;
+        animation-duration: 200ms;
+        left:-1500px;
+    }
 
 
 
@@ -355,4 +371,23 @@ a.navigation__link {
         display: none;
     }
 
+}
+
+@keyframes showUp {
+    from {
+        left: -1500px;    
+    }
+    to {
+        left: 150px;
+    }
+}
+
+@keyframes hide {
+    from {
+        left:150px
+
+    }
+    to {
+        left:-1500px;
+    }
 }
