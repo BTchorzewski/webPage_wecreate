@@ -1,29 +1,18 @@
 document.addEventListener("DOMContentLoaded", function(){
     var clickMenuElement = document.querySelector(".menu-clicker");
-    var navigationBar = document.querySelector(".navigation");
+    var navigationBar = document.querySelector(".column-menu");
     
     
-    console.log(navigationBar.getAttribute("Class"));
-    function animateNavBar() {
-        if (!navigationBar.classList.contains("animation-hide") && !navigationBar.classList.contains("animation-showUp")) {
-            // if no animations class then add sw
-            navigationBar.classList.add("animation-showUp");
-            console.log(navigationBar.getAttribute("Class"));
-        } else if (navigationBar.classList.contains("animation-hide")) {
-            navigationBar.classList.remove("animation-hide");
-            navigationBar.classList.add("animation-showUp");
-            console.log(navigationBar.getAttribute("Class"));
-        } else if (navigationBar.classList.contains("animation-showUp")) {
-            navigationBar.classList.remove("animation-showUp");
-            navigationBar.classList.add("animation-hide");
-            console.log(navigationBar.getAttribute("Class"));
-        }
+    console.log(navigationBar.style);
 
+    function animateNavBar() {
+        navigationBar.style.width = '100%';
+        
     }
 
     clickMenuElement.addEventListener("click", animateNavBar);
 
-})
+});
 
 
 
