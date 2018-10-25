@@ -32,9 +32,7 @@ a:any-link {
     padding-top: 100px; 
 }
 
-.menu-clicker {
-    display: none;
-}
+
 
 
 .header::before {
@@ -91,16 +89,16 @@ a:any-link {
     background-color: transparent ;
     position: relative;
     z-index: 2;
-
+    color: #582782;
 }
 
 //  I had to add "a" tag to force links to change color.
-a.navigation__link {
+.navigation__link {
     display: inline-block;
     margin: 0 10px;
     font-size: 24px;
     text-transform: uppercase;
-    color: #582782;
+    color: inherit;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
@@ -339,8 +337,10 @@ a.navigation__link {
     .header {
         height: 300px;
         position: relative;
+        z-index: 2;
         padding-right: 0;
-        margin-top: -250px; 
+        margin-top: 0; 
+
         
         
     }
@@ -367,70 +367,51 @@ a.navigation__link {
     }
 
     .navigation {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        background-color: transparent;
+        background-color: red;
         padding: 0;
         width: 100%;
-        height: 50vh;
+        height: 10vh;
         position: relative;
         z-index: 3;
+        
    
     }
-    
-    
-    .menu-clicker {
-        
-        box-sizing: border-box;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-self: flex-start;
-        width: 50px;
-        height: 50px;
-        background-color: #fe6a82;
-    }
-    
-    .menu-clicker__line {
-        display: block;
-        width: 30px;
-        height: 2px;
-        background-color: black;
-        margin: 3px;
-    }
 
-    .column-menu {
-        display: flex;
-        flex-direction: column;
-        margin-right: 40%;
-        width: 0;
-        overflow: hidden;
-        background-color: #e579d7;
+    .navigation__icon {
+        align-self: flex-start;
     }
 
     .navigation__link {
-        margin: 0;
-        
-        
-    }
-
-    .animation-showUp {
-        animation-name: showUp;
-        animation-duration: 600ms;
+        position: relative;
+        left: -600px;
+        top: 30px;
         width: 100%;
+        padding:5px 50px;
+        z-index: 4;
+        background-color: green;
+        line-height: 65px;
         
     }
-
-    .animation-hide {
-        animation-name: hide;
+    
+    a.navigation__link--active {
+        animation-name: active;
         animation-duration: 600ms;
-        width: 0;
+        animation-direction: alternate;
+        left: 0;
+        
+        
         
     }
-
+    
+    a.navigation__link--unactive {
+        animation-name: unactive;
+        animation-duration: 600ms;
+        left: -600px;
+    }
+    
 
     .crazy-section__title {
         font-size: 45px;
@@ -463,25 +444,7 @@ a.navigation__link {
    
 }
 
- @keyframes showUp {
-     from {
-         width: 0; 
-                
-     }
-     to {
-         width: 100%;
-        
-     }
- }
 
- @keyframes hide {
-     from {
-         width: 100%;
-     }
-     to {
-         width: 0;
-     }
- }
 
 @media (max-width: 590px) {
    
@@ -492,5 +455,23 @@ a.navigation__link {
       
     }
 
+}
+// keyframes
 
+@keyframes active {
+    0% {
+        left: -600px
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes unactive {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -600px
+    }
 }
