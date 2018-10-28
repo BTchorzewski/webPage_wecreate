@@ -15,7 +15,7 @@ a:any-link {
 
 .container {
     min-width: 360px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
@@ -37,29 +37,29 @@ a:any-link {
 
 .header::before {
     content: "";
-    min-width: 25%;
-    height: 50px;
+    width: 20%;
+    height: 10%;
     background-image: url("../wecreate-assets/wecreate-assets/img/wave-top2.svg");
-    
     background-size: contain;
+    background-repeat: repeat-x;
     position: absolute;
     right: 0;
-    bottom: 50px;
-    z-index: 1;
+    bottom: 10%;
+    z-index: 2;
 }
 
 
 .header::after {
     content: "";
-    min-width: 35%;
-    height: 60px;
+    width: 35%;
+    height: 20%;
     background-image: url("../wecreate-assets/wecreate-assets/img/wave-top.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-repeat: repeat-x;
+    background-size: contain;
     position: absolute;
     right: 0;
-    bottom: -33px;
-    z-index: 1;
+    bottom: -13%;
+    z-index: 2;
 }
 
 .header__title {
@@ -177,17 +177,31 @@ a:any-link {
 
 
 .crazy-section {
-    height: 500px;
-    
+    height: 350px;
     background-image: url('../wecreate-assets/wecreate-assets/img/fullbg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20%;
+    position: relative;
     
 }
 
+.crazy-section::after {
+    content: "";
+    background-image: url('../wecreate-assets/wecreate-assets/img/wave-bottom.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+    width: 50%;
+    height: 20%;
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+
+
+}
+
 .crazy-section__title {
-    line-height: 500px;
+    line-height: 350px;
     text-align: center;
     font-family: "Montserrat";
     font-weight: bold;
@@ -275,15 +289,9 @@ a:any-link {
     text-align: center;
     width: 50%;
 }
-
-@media (min-width: 950px) {
-    .header__subtitle {
-        font-size:32px;
-        margin: 10px 0;
-    }
-
-    .header::after {
-        bottom: -30px;
+@media (min-width: 1100px) {
+    .header__title::after {
+        bottom: 25%;
     }
 }
 
@@ -318,7 +326,7 @@ a:any-link {
 
     .marketing__designedBy {
         position: relative;
-        top: 550px;
+        top: 510px;
         z-index: 3;
     }
 
@@ -351,18 +359,7 @@ a:any-link {
         padding-top: 5px;
     }
 
-    .header::after {
-        height: 40px;
-        bottom: -20px;
-        right: 0px;
-        
-    }
-
-    .header::before {
-        height: 30px;
-        bottom: 30px;
-    }
-
+  
     .navigation {
         flex-direction: column;
         align-items: center;
@@ -418,7 +415,7 @@ a:any-link {
         animation-duration: 600ms;
         display: block;
     }
-
+    
     span.navigation__icon-line--unactive:nth-child(3) {
         animation-name: rotate-45--back;
         animation-duration: 800ms;
@@ -433,7 +430,7 @@ a:any-link {
         padding:5px 50px;
         z-index: 4;
         background-color: inherit;
-        line-height: 75px;
+        line-height: 80px;
         
     }
     
@@ -478,6 +475,22 @@ a:any-link {
         top: 620px;
         z-index: 3;
     }
+    header::before {
+        content: "";
+        display: none;
+    
+    }
+    
+    
+    .header::after {
+        content: "";
+        width: 100%;
+        bottom: -10%
+    }
+
+    .crazy-section::after {
+        width: 100%;
+    }
    
 }
 
@@ -485,26 +498,39 @@ a:any-link {
 
 @media (max-width: 590px) {
    
+  
+
     .header__title {
         font-size: 55px;
         line-height: 100%;
     } 
 
-    .header__subtitle {
-        padding-top: 15px;
-    }
 
-    .header::after {
-        bottom: -25px;
-    }
 
     .crazy-section__title {
         font-size: 35px;
     }
 
+
+    .marketing__designedBy {
+        top: 620px;
+    }
+
+
+
 }
 
+@media (max-width: 350px) {
+    .marketing__title {
+        margin-bottom: 10px;
+    }
 
+    .marketing__designedBy {
+        font-size: 14px;
+        top: 620px;
+    }
+
+}
 
 
 // keyframes
