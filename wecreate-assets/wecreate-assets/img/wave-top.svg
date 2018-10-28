@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 365 51" width="365" height="51">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #8446b9;stroke-width: 30 } 
+	</style>
+	<path id="XMLID_2_" class="shp0" d="M0,15.8c30.3,0 30.3,20 60.5,20c30.3,0 30.3,-20 60.5,-20c30.3,0 30.3,20 60.5,20c30.3,0 30.3,-20 60.5,-20c30.3,0 30.3,20 60.5,20c30.3,0 30.3,-20 60.6,-20c30.3,0 30.3,20 60.6,20" />
+</svg>
